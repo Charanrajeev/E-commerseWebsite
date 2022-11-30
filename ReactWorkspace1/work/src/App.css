@@ -1,0 +1,26 @@
+.container{
+  width: 412px;
+  height:100%;
+  background-color: aqua;
+  border: 2px solid black;
+  margin: 10px auto;
+}
+input{
+  display: inline-block;
+  text-align: center;
+  margin:1px auto;
+  color:rgb(185, 35, 35);
+  font-size: larger;
+}
+button{
+  display: block;
+  margin:5px auto;
+  border: none;
+  
+}
+.container-box{
+  display: block;
+  width: 500px;
+  height: 250px;
+  margin: 10px auto;
+}
