@@ -1,0 +1,12 @@
+.container_for-bg{
+    position: relative;
+    width: 100%;
+   
+}
+#btnLogin{
+    position: absolute;
+    width: 100px;
+    top: 50%;
+    left: 50%;
+    translate: (-50%,-50%);
+}

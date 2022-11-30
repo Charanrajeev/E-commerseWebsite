@@ -1,0 +1,25 @@
+center{
+    margin:10px auto;
+    width:auto;
+}
+#in_Myproducts{
+    width:500px
+}
+#btn_at_Myproducts{
+
+ margin-top: 20px;
+ color:blueviolet
+}
+.card{
+display: flex;
+height: 500px;
+width:250px;
+margin: 5px;
+}
+.allCards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border:1px solid black;
+    width: auto;
+}
