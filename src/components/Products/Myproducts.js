@@ -44,16 +44,16 @@ const Myproducts = () => {
     
     return (
         <div>
-            <center >
+            
                 <form className="form-block my-2 my-lg-0">
                     <input id='in_Myproducts'className="form-control mr-sm-2" type="text" placeholder="Search" onChange={onChangeHandler} />
                     <button id='btn_at_Myproducts' className="btn btn-primary-success" type="submit" onClick={onSubmitHandler}>Search</button>
                 </form>
-            </center>
-            <center>
+            
+            
                 <Cards list={getList}/>
                 
-            </center>
+            
         </div>
     )
 }
