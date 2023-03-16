@@ -1,7 +1,10 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './Aboutus.css'
 
 const Aboutus = () => {
+  useEffect(()=>{
+    document.title='AboutUs'
+  },[])
   return (
     <div>
         <div className='abtus_container'>

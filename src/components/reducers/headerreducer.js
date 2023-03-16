@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 const headerSlice = createSlice({
     name: 'login',
     initialState: {
-        loginStatus: false
+        loginStatus: localStorage.getItem('token')
     },
     reducers: {
         onChangeHeader: (state, actions) => {

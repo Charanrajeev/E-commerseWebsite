@@ -12,6 +12,7 @@ const loginSlice= createSlice({
             state.email=actions.payload.email
             state.password=actions.payload.password
             console.log(state.email,state.password)
+           
         },
         onAuthenticate:(state,actions)=>{
             if(actions.payload.email==state.email && actions.payload.password==state.password)

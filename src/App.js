@@ -8,7 +8,10 @@ import Products from './components/Products/Products';
 import Cart from './components/Cart/Cart'
 import Aboutus from './components/aboutus/Aboutus';
 import Contactus from './components/Contactus/Contactus';
-
+import './App.css'
+import Footer from './components/Footer/Footer';
+import Help from './components/Help/Help';
+import Alert from './components/Alert/Alert';
 //in app.js i have setup all pages routes
 const App = () => {
   return (
@@ -24,9 +27,12 @@ const App = () => {
             <Route path='cart' element={<Cart/>}/>
             <Route path='aboutus' element={<Aboutus/>}/>
             <Route path='contactus' element={<Contactus/>}/>
+            <Route path='help' element={<Help/>}/>
         </Routes>
+        <Footer/>
         </BrowserRouter>
     </div>
+    
   )
 }
 

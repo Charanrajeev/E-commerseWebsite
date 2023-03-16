@@ -5,6 +5,7 @@ import Cards from './Cards';
 import { useDispatch } from 'react-redux';
 import {onAddToStoreHandler,onStatus} from '../reducers/storereducer';
 import { useSelector } from 'react-redux';
+import '../../App.css'
 
 
 const Myproducts = () => {
@@ -41,13 +42,16 @@ const Myproducts = () => {
         })
         
     }
+    useEffect(()=>{
+        document.title='Products'
+      },[])
     
     return (
-        <div>
+        <div className='container-myproducts'>
             
-                <form className="form-block my-2 my-lg-0">
-                    <input id='in_Myproducts'className="form-control mr-sm-2" type="text" placeholder="Search" onChange={onChangeHandler} />
-                    <button id='btn_at_Myproducts' className="btn btn-primary-success" type="submit" onClick={onSubmitHandler}>Search</button>
+                <form className='container-myproducts-form'>
+                    <input type="text" className='container-myproducts-input' placeholder="Search" onChange={onChangeHandler} />
+                    <button  type="submit" className='container-myproducts-btn' onClick={onSubmitHandler}>Search</button>
                 </form>
             
             

@@ -13,9 +13,13 @@ const Cart = () => {
   //   console.log(piece.splice(index,1))
   //   piece.splice(index,1)
   // }
+  useEffect(()=>{
+    document.title=`Cart-${selector.length}`
+  },[selector])
   useEffect(() => {
+    
     let li = 0
-    for (let i = 0; i < selector.length; i++) {
+    for (let i = 0; i <selector.length; i++) {
       li = li + Math.round(selector[i].recipe.calories)
     }
     setPrice(Math.round(li / 10))

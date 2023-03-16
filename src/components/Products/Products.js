@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {onChangeHeader} from '../reducers/headerreducer';
 import Myproducts from './Myproducts';
+import Alert from '../Alert/Alert';
 
 const Products = () => {
   const navigation = useNavigate()
   const dispatch=useDispatch()
+
   const [getVeri,setVeri] = useState(localStorage.getItem('token'))
  useEffect(()=>{
   if(localStorage.getItem('token')=='false')
@@ -16,7 +18,9 @@ const Products = () => {
   }
   else if(!localStorage.getItem('token'))
   {
-    navigation('/register')
+// setAlert(false)
+    // navigation('/register')
+
   }
   else {
     dispatch(onChangeHeader(true))
@@ -24,7 +28,7 @@ const Products = () => {
   }
  },[])
   return (<div>
-    {localStorage.getItem('token')=='true'?<Myproducts/>:<div>you are not authurized</div>}
+    {localStorage.getItem('token')=='true'?<Myproducts/>:<Alert/>}
   
   </div>
    

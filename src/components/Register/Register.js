@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import React  from 'react';
 import {onRegisterHandler} from '../reducers/loginreducer';
 import {useDispatch} from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const dispatch = useDispatch()
-  const [getdeatils,setdetails]= useState({
-    email:'',
-    password:'',
-    confirmpassword:''
 
-  })
+
+  useEffect(()=>{
+    document.title='Register'
+  },[])
+  const dispatch = useDispatch()
+  const navigation = useNavigate()
+  const [getdeatils,setdetails]= useState({})
 const onChangeHandler=(e)=>{
    setdetails({
     ...getdeatils,[e.target.name]:e.target.value
@@ -20,30 +22,30 @@ const onSubHandler=(e)=>{
   e.preventDefault()
  if(getdeatils.password===getdeatils.confirmpassword){
   dispatch(onRegisterHandler(getdeatils))
-  alert("success")
+  navigation('/login')
+  
  }
 }
   return (
-    <div className='conatiner_for_login'>
-      <form>
-  <div className="form-group">
+    <div className="container-register" >
+     
+      <form className='container-register-main'>
+      <h2>Sign Up</h2>
+  <div className="container-register-sub">
     <label >Email address</label>
-    <input type="email" className="form-control" onChange={onChangeHandler} name='email' aria-describedby="emailHelp" placeholder="Enter email"/>
-    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+    <input onChange={onChangeHandler} name='email' placeholder="Enter email"/>
+  
   </div>
-  <div className="form-group">
+  <div className="container-register-sub">
     <label>Password</label>
-    <input type="password" className="form-control" onChange={onChangeHandler} name='password' placeholder="Password"/>
+    <input type="password"  onChange={onChangeHandler} name='password' placeholder="Password"/>
   </div>
-  <div className="form-group">
+  <div className="container-register-sub">
     <label>Confirm Password</label>
-    <input type="password" className="form-control"  onChange={onChangeHandler} name='confirmpassword' placeholder="Confirm Password"/>
+    <input type="password"  onChange={onChangeHandler} name='confirmpassword' placeholder="Confirm Password"/>
   </div>
-  <div className="form-check">
-    <input type="checkbox" className="form-check-input"/>
-    <label className="form-check-label" >Check me out</label>
-  </div>
-  <button type="submit" onClick={onSubHandler} className="btn btn-primary">SignUp</button>
+
+  <button type="submit" onClick={onSubHandler} >SignUp</button>
 </form>
     </div>
     

@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import './Login.css';
+import '../../App.css'
+
 import {useSelector} from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { onAuthenticate } from '../reducers/loginreducer';
 
 const Login = () => {
+  useEffect(()=>{
+    document.title='Login'
+  },[])
   const change=useSelector((state)=>state.login.valid)
   const navigation = useNavigate()
   const dispatch=useDispatch()
@@ -20,24 +24,27 @@ const Login = () => {
 
  }
   return (
-    <div className='conatiner_for_login'>
-      <form>
-  <div className="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" onChange={onChangeHandler} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' placeholder="Enter email"/>
-    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div className="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" onChange={onChangeHandler} className="form-control" id="exampleInputPassword1" name='password' placeholder="Password"/>
-  </div>
-  <div className="form-check">
-    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-    <label className="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" className="btn btn-primary" onClick={onSubHandler}>Submit</button>
+     <div className="container-register" >
+     
+     <form className='container-register-main'>
+     <h2>Please Login</h2>
+ <div className="container-register-sub">
+   <label >Email address</label>
+   <input onChange={onChangeHandler} name='email' placeholder="Enter email"/>
+ 
+ </div>
+ <div className="container-register-sub">
+   <label>Password</label>
+   <input type="password"  onChange={onChangeHandler} name='password' placeholder="Password"/>
+ </div>
+ 
+
+ <button type="submit" onClick={onSubHandler} >Login</button>
 </form>
-    </div>
+   </div>
+
+
+
   )
 }
 
